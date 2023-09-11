@@ -1,0 +1,122 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Snador - CHILLS',
+};
+---
+
+<Layout metadata={metadata} fadeStyle="fade-dark">
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero tagline="PACK 1" class:list={'mb-0 pb-0'}>
+    <Fragment slot="title">
+      Atmospheric Horror Ambient Music <br /><span class="font-semibold">Chills</span><br />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Spice up your new Horrorgame or Indie movie with <span class="font-semibold">Chills</span>.</span
+      ><br />
+       A high quality ambient music pack with 4 different tracks. All tracks are masterfully mixed to send shivers down
+      your spine.
+    </Fragment>
+  </Hero>
+
+  <Content
+    items={[
+      {
+        title: 'FEAR',
+        audio: 'CHILLS/1FEARDEMO',
+        icon: 'tabler:mood-wrrr',
+      },
+      {
+        title: 'UNCERTAINTY',
+        audio: 'CHILLS/2UNCERTAINTYDEMO',
+        icon: 'tabler:mood-wrrr',
+      },
+      {
+        title: 'SUSPENSE',
+        audio: 'CHILLS/3SUSPENSEDEMO',
+        icon: 'tabler:mood-wrrr',
+      },
+      {
+        title: 'TORMENT',
+        audio: 'CHILLS/4TORMENTDEMO',
+        icon: 'tabler:mood-wrrr',
+      },
+    ]}
+    image={{
+      src: '../../src/assets/images/slenderman.png',
+      alt: 'scary boi',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Preview</h3>
+    </Fragment>
+  </Content>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'Where can I buy this Pack?',
+        description: 'You can buy this Pack via the Unity Asset Store and the Unreal Engine Marketplace.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Can I find your music on Spotify or Soundcloud?',
+        description: `Currently, this pack can only be found on the Unity Asset Store and the Unreal Engine Marketplace. There will be free releases on Spotify and Soundcloud soon.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'I which format is your music available?',
+        description:
+          'Per default, tracks are shipped out in .wav, .ogg and .mp3.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'I would like to change certain sections of a track',
+        description: `Contact me! I can adjust any track to your liking.`,
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Reach out to me"
+    subtitle="Have questions? Feel free to contact me via e-mail."
+    callToAction={{
+      text: 'Contact us',
+      href: 'mailto:snadormusic@gmail.com',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'snadormusic@gmail.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Soundcloud',
+        description: 'https://soundcloud.com/snador', /// todo make links clickable
+        icon: 'tabler:headset',
+      }
+    ]}
+  />
+</Layout>

@@ -23,7 +23,7 @@ const { language, textDirection } = I18N;
 ---
 
 <!DOCTYPE html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={language} dir={textDirection} class="2xl:text-[20px] h-screen">
 
   <head>
     <CommonMeta />
@@ -35,7 +35,8 @@ const { language, textDirection } = I18N;
     <Analytics />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="flex flex-col bg-page text-default bg-page tracking-tight">
+
     <slot />
 
     <BasicScripts />

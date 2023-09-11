@@ -1,0 +1,41 @@
+.fade {
+  background: linear-gradient(-45deg, #030620, #030620, #290CFF, #9B00E8, #0161E8, #00f2ff9d, #030620, #030620);
+  background-size: 500%, 300%;
+  animation: light 25s ease-in-out infinite;
+}
+
+.fade-dark {
+  background: linear-gradient(-80deg, #030620, #030620, #29051b, #1c051d, #030620, #030620);
+  background-size: 500%, 100%;
+  animation: dark 20s ease-in-out infinite;
+}
+
+@keyframes light {
+  0% {
+    background-position-y: bottom;
+    background-position: 0 50%;
+  }
+  50% {
+    background-position-y: center;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position-y: top;
+    background-position: 0 50%;
+  }
+}
+
+@keyframes dark {
+  0% {
+    background-position-y: bottom;
+    background-position: 0 50%;
+  }
+  50% {
+    background-position-y: center;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position-y: top;
+    background-position: 0 50%;
+  }
+}

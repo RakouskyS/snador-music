@@ -5,6 +5,7 @@ import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
+import AudioVisualizer from '../ui/AudioVisualizer.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -15,6 +16,7 @@ const {
   items = [],
   columns,
   image = await Astro.slots.render('image'),
+  audiovis = await Astro.slots.render('audiovis'),
   isReversed = false,
   isAfterContent = false,
 
@@ -63,6 +65,7 @@ const {
             panel: 'max-w-none',
             title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
             description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
+            audio: 'mt-2',
             icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
             action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
           }}
@@ -76,7 +79,7 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                  class="mx-auto w-full rounded-lg bg-transparent shadow-lg"
                   width={500}
                   height={500}
                   widths={[400, 768]}
@@ -88,6 +91,26 @@ const {
             </div>
           )
         }
+        <!-- {
+          audiovis && (
+            <div class="relative m-auto max-w-4xl">
+              {typeof audiovis === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                // <Image
+                //   class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                //   width={500}
+                //   height={500}
+                //   widths={[400, 768]}
+                //   sizes="(max-width: 768px) 100vw, 432px"
+                //   layout="responsive"
+                //   {...(image as any)}
+                // />
+                // <AudioVisualizer/>
+              )}
+            </div>
+          )
+        } -->
       </div>
     </div>
   </div>
