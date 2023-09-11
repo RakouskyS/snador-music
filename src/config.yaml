@@ -1,7 +1,7 @@
 site:
   name: Snador's Music
-  site: 'https://snadormusic.github.io'
-  base: '/'
+  site: 'https://rakouskys.github.io'
+  base: '/snador-music'
   trailingSlash: false
 
   googleSiteVerificationId: false
