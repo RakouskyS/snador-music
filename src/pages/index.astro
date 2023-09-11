@@ -4,12 +4,14 @@ import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
   title: 'Snador',
-  ignoreTitleTemplate: true,
+  // ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata} fadeStyle="fade">
+  <div class="w-full h-full">
     <Hero
+      class:list={'mb-0 pb-0'}
       actions={[
         { text: 'Ambient', href: '/homes/ambient/ambient' },
         // { text: 'Electronic Music', href: '#features' },
@@ -18,13 +20,16 @@ const metadata = {
       <Fragment slot="title">Creating music for your senses</Fragment>
 
       <Fragment slot="subtitle">
-        <p class="mt-4">Hey 👋 I create ambient music, fine tuned for your games, movies or sleep troubles.</p>
+        <span class="hidden sm:inline">
+          Hey 👋 I create ambient music, fine tuned for your games, movies or sleep troubles.</span
+        >
       </Fragment>
 
-      <Fragment slot="subtitle">
+      <!-- <Fragment slot="subtitle">
         <p class="mt-4 mb-6">
           If you have trouble getting up in the morning, I also got you covered with my Techno, Trance, Tekno music.
         </p>
-      </Fragment>
+      </Fragment> -->
     </Hero>
+  </div>
 </Layout>
