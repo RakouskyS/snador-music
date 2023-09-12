@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Snador',
@@ -13,7 +14,7 @@ const metadata = {
     <Hero
       class:list={'mb-0 pb-0'}
       actions={[
-        { text: 'Ambient', href: '/homes/ambient/ambient' },
+        { text: 'Ambient', href: getPermalink('/homes/ambient/ambient') },
         // { text: 'Electronic Music', href: '#features' },
       ]}
     >

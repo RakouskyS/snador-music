@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import type { ItemGrid } from '~/types';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
+import { SITE } from '~/utils/config';
 // import AudioPlayer from './AudioPlayer.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props as ItemGrid;
@@ -56,7 +57,7 @@ const {
               {audio && (
                 // <AudioPlayer audiopath={`../../src/assets/music/${audio}.mp3`}/>
                 <audio controls class={audioClass}>
-                  <source src={`../../src/assets/music/${audio}.mp3`} type="audio/mp3" />
+                  <source src={`${SITE.base}/music/${audio}.mp3`} type="audio/mp3" />
                   Your browser does not support the audio element.
                 </audio>
               )}
